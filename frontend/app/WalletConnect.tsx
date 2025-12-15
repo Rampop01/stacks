@@ -3,7 +3,7 @@
 import { userSession } from './user-session';
 import { showConnect } from '@stacks/connect';
 import { STACKS_TESTNET, STACKS_MAINNET } from '@stacks/network';
-import { Button } from './components/ui/button';
+import { Button } from '../components/ui/button';
 
 // Use testnet for development, switch to STACKS_MAINNET for production
 const network = STACKS_TESTNET;
