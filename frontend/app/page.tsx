@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { FortressButton } from "@/components/fortress-button"
+import { ConnectButton } from "@/components/ConnectButton"
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#1a1a1a] via-[#242424] to-[#1a1a1a]">
+    <div className="min-h-screen relative overflow-hidden bg-linear-to-b from-[#1a1a1a] via-[#242424] to-[#1a1a1a]">
       {/* Stone texture overlay */}
       <div className="absolute inset-0 stone-texture opacity-40" />
 
@@ -19,18 +20,23 @@ export default function LandingPage() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+        {/* Connect Button */}
+        <div className="absolute top-6 right-6">
+          <ConnectButton />
+        </div>
+
         {/* Fortress gate decoration */}
         <div className="mb-12 space-y-6 text-center">
           <div className="inline-block">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="h-px w-16 bg-linear-to-r from-transparent via-primary to-transparent" />
               <div className="w-3 h-3 rotate-45 border-2 border-primary" />
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="h-px w-16 bg-linear-to-r from-transparent via-primary to-transparent" />
             </div>
           </div>
 
           {/* Main title - engraved style */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-engraved tracking-wider uppercase bg-gradient-to-b from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-engraved tracking-wider uppercase bg-linear-to-b from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
             Stacks
             <br />
             Quest
@@ -43,9 +49,9 @@ export default function LandingPage() {
 
           <div className="inline-block mt-4">
             <div className="flex items-center justify-center gap-3">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="h-px w-16 bg-linear-to-r from-transparent via-primary to-transparent" />
               <div className="w-3 h-3 rotate-45 border-2 border-primary" />
-              <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent" />
+              <div className="h-px w-16 bg-linear-to-r from-transparent via-primary to-transparent" />
             </div>
           </div>
         </div>
