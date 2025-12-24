@@ -6,6 +6,7 @@ import { AppKitProvider } from '@reown/appkit';
 import { AppKitWagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { config } from '../wagmi.config';
 import { theme } from '../theme';
+import { ProfileProvider } from '../contexts/ProfileContext';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,7 +28,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
           appDescription="Learn Bitcoin. Build on Stacks. Anchored to Truth."
           appIconUrl="/icon.png"
         >
-          {children}
+          <ProfileProvider>
+            {children}
+          </ProfileProvider>
         </AppKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
