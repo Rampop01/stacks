@@ -35,16 +35,8 @@ function LessonContent() {
               ))}
 
               <div className="border-l-4 border-primary/50 pl-6 my-8 bg-card/30 p-6 rounded-r">
-                <h3 className="text-xl font-bold mb-3 text-primary">{topic.content.analogy.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-primary">Analogy</h3>
                 <p className="text-muted-foreground leading-relaxed">{topic.content.analogy.content}</p>
-              </div>
-
-              <div className="bg-card/50 p-6 rounded border border-border mt-8">
-                <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
-                  <div className="w-2 h-2 rotate-45 bg-primary" />
-                  Key Takeaway
-                </h3>
-                <p className="text-foreground/90 italic">{topic.content.keyTakeaway}</p>
               </div>
             </>
           }

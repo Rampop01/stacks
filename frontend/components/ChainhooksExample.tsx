@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import chainhooksClient from '@/lib/chainhooks';
+import { getChainhooksStatus, getChainhooks } from '@/app/actions/chainhooks';
 
 export default function ChainhooksExample() {
   const [status, setStatus] = useState<string>('Checking API status...');
@@ -13,14 +13,23 @@ export default function ChainhooksExample() {
     const fetchStatus = async () => {
       try {
         setLoading(true);
-        const status = await chainhooksClient.getStatus();
-        setStatus(`API Status: ${status.status} (${status.server_version})`);
+        const statusRes = await getChainhooksStatus();
+        if (statusRes.success && statusRes.data) {
+          setStatus(`API Status: ${statusRes.data.status} (${statusRes.data.server_version})`);
+        } else {
+          throw new Error(statusRes.error);
+        }
         
-        // Fetch chainhooks (you'll need an API key for this to work)
-        const { results } = await chainhooksClient.getChainhooks({ limit: 10 });
-        setChainhooks(results);
+        // Fetch chainhooks
+        const hooksRes = await getChainhooks({ limit: 10 });
+        if (hooksRes.success && hooksRes.data) {
+          setChainhooks(hooksRes.data.results);
+        } else {
+          // Don't throw if just the hooks fail (maybe API key missing)
+          console.warn('Hooks fetch failed:', hooksRes.error);
+        }
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to fetch chainhooks');
+        setError(err instanceof Error ? err.message : 'Failed to fetch data');
         console.error('Error:', err);
       } finally {
         setLoading(false);
