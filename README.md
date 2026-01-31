@@ -25,7 +25,6 @@ If you want a *screen-by-screen* walkthrough of the UI and product concepts, see
 - [Repository Documentation](#repository-documentation)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -44,8 +43,8 @@ Stacks Quest aims to:
 ```
 .
 ├── frontend/         # Next.js app (UI + wallet integrations)
-├── smartcontract/    # Clarity contracts (progress + NFTs)
-└── SCREENS.md        # Product/UI documentation
+├──    
+└── smartcontract/         # Clarity contracts (progress + NFTs)
 ```
 
 - The frontend is what you run locally during development.
@@ -285,26 +284,4 @@ Recommended contribution workflow:
 - Prefer adding screenshots for UI changes
 - Avoid committing `.env*` files or API keys
 
-If you want, I can add a `CONTRIBUTING.md` and a PR template later.
 
----
-
-## License
-
-A root `LICENSE` file is not currently present in this repository.
-
-Some subdirectories mention MIT in their README, but GitHub considers the repository’s license authoritative when a top-level `LICENSE` exists.
-
-Recommended next step:
-
-- Add a root `LICENSE` file (MIT or whichever license you intend)
-
----
-
-## Acknowledgments
-
-- Next.js
-- Stacks + Clarity
-- Hiro tooling (Chainhooks)
-- wagmi/viem
-- Reown AppKit
