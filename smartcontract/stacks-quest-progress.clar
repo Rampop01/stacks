@@ -107,22 +107,6 @@
 
 ;; Initialize user progress (called when user enters fortress)
 (define-public (start-quest)
-  (let ((current-progress (map-get? user-progress tx-sender)))
-    (if (is-none current-progress)
-      (begin
-        (map-set user-progress tx-sender {
-          topics-completed: u0,
-          total-score: u0,
-          quest-started: block-height,
-          last-active: block-height,
-          fortress-master: false
-        })
-        (ok true)
-      )
-      (ok false) ;; Already started
-    )
-  )
-)
 
 ;; Record quiz attempt (called when user takes quiz)
 (define-public (record-quiz-attempt (topic-id uint) (score uint))
